@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="">
+    <div class="">
+        <div class="">
+            <h3>Edit list</h3>
+            <h5>{{ todo_list_id.title|upper }}</h5>
+        </div>
+        <ul>
+            {% for todo in object_list %}
+            <li>
+                <div class="">
+                    <div class="" role="button" onclick="location.href = '#'">
+                        {{ todo.title }}
+                        ( Due {{ todo.due_date | date:"l, F, j"}} )
+                    </div>
+                </div>
+            </li>
+            {% empty %}
+            <p>You have done all job today!</p>
+            {% endfor %}
+        </ul>
+        <p>
+            <input type="button" value="Add a new things" onclick="location.href='#'">
+        </p>
+    </div>
+</div>
+{% endblock %}
