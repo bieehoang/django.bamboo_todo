@@ -14,6 +14,7 @@ class ItemListView(ListView):
 
     def get_queryset(self):
         """
+        # Dynamic filtering #
         Restrict data which need to return. NOT OF ALL DATA
         """
         self.todo_list = get_object_or_404(ToDoList, id = self.kwargs["pk"]) # Check if data about todo item return not exist with ToDoList db
@@ -21,7 +22,8 @@ class ItemListView(ListView):
 
     def get_context_data(self):
         """
-        Adding extra context
+        # Adding extra context #
+        Adding "todo_list" and value into TodoItem
         """
         context = super().get_context_data()
         context["todo_list"] = ToDoList.objects.get(id=self.kwargs["pk"])
