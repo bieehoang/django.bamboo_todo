@@ -7,7 +7,7 @@
 			{% csrf_token %}
 			{{ form.as_p }}
 			<input value="Save" type="submit">
-			<input value="Cancel" type="button" onclick="location.href='{% url 'todo:items' todo_list.id %}';">
+			<input value="Cancel" type="button" onclick="location.href='{% url 'todo:index' %}'">
 			</form>
     </div>
 </div>
