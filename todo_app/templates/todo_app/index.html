@@ -3,7 +3,7 @@
 
 <!-- index.html -->
 {% if object_list %}
-<h3>ALL MY LIST</h3>
+<h3>MY DAY</h3>
 {% endif %}
 <ul>
     {% for todolist in object_list %}
@@ -18,7 +18,7 @@
 </ul>
 <p>
     <input 
-        value = 'Add a new list'
+        value = 'Add a new planed'
         type = 'button'
         onclick="location.href='{% url 'todo:list-add' %}'"
 </p>

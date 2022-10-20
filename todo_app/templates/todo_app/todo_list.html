@@ -3,7 +3,7 @@
 <div class="">
     <div class="">
         <div class="">
-            <h3>Edit list</h3>
+            <h3>Planed</h3>
             <h5>{{ todo_list.title|upper }}</h5>
         </div>
         <ul>
@@ -23,13 +23,17 @@
         <p>
             <input 
                 type="button" 
-                value="Add a new things" 
+                value="Add a new task" 
                 onclick="location.href='{% url 'todo:item-add' todo_list.id %}'">
+            <input 
+                value = "Update planed's name"
+                type = "button"
+                onclick = "location.href='{% url 'todo:list-update' todo_list.id %}'">
 			<input 
-				value = "Delete List"
+				value = "Delete planed"
 				type = "button"
-				onclick = "location.href='{% url 'todo:list-delete' todo_list.id %}'"
-        </p>
+				onclick = "location.href='{% url 'todo:list-delete' todo_list.id %}'">
+           </p>
     </div>
 </div>
 {% endblock %}

@@ -68,6 +68,12 @@ class ItemCreate(CreateView):
         """
         return reverse("todo:list", args=[self.object.todo_list_id])
 
+class ListUpdate(UpdateView):
+    model = ToDoList
+    fields = [
+        'title'
+    ]
+    success_url = reverse_lazy("todo:index")
 class ItemUpdate(UpdateView):
     model = TodoItem
     fields = [
