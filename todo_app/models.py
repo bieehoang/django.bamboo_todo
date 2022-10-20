@@ -17,7 +17,7 @@ class ToDoList(models.Model):
         """
         Return the URL for the particular data item
         """
-        return reverse('list', args=[self.id])
+        return reverse('items', args=[self.id])
 
     def __str__(self):
         """
