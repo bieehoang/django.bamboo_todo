@@ -1,7 +1,7 @@
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import ToDoList, TodoItem
 from django.shortcuts import get_object_or_404
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 class ListListView(ListView):
     model = ToDoList
     template_name = 'todo_app/index.html'
@@ -78,6 +78,7 @@ class ItemUpdate(UpdateView):
     ]
     def get_context_data(self):
         """
+        * Adding extra context *
         Add title and todo_list info into template
         """
         context = super(ItemUpdate, self).get_context_data()
@@ -86,3 +87,29 @@ class ItemUpdate(UpdateView):
         return context
     def get_success_url(self):
         return reverse("todo:list", args=[self.object.todo_list_id])
+
+class ListDelete(DeleteView):
+    """"
+    Use reverse_lazy > https://codereview.doctor/features/django/best-practice/reverse-lazy-vs-reverse
+    """
+    model = ToDoList
+    success_url = reverse_lazy("todo:index")
+
+class ItemDelete(DeleteView):
+    model = TodoItem
+    def get_success_url(self):
+        return reverse_lazy("todo:list", args=[self.kwargs["list_id"]])
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["todo_list"]= self.object.todo_list
+        return context
+
+
+
+
+
+
+
+
+
+

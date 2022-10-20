@@ -21,7 +21,14 @@
             {% endfor %}
         </ul>
         <p>
-            <input type="button" value="Add a new things" onclick="location.href='{% url 'todo:item-add' todo_list.id  %}'">
+            <input 
+                type="button" 
+                value="Add a new things" 
+                onclick="location.href='{% url 'todo:item-add' todo_list.id %}'">
+			<input 
+				value = "Delete List"
+				type = "button"
+				onclick = "location.href='{% url 'todo:list-delete' todo_list.id %}'"
         </p>
     </div>
 </div>
