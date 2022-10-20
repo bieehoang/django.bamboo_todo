@@ -57,15 +57,16 @@ class ItemCreate(CreateView):
         """
         * Adding extra context *
         """
-        context = super(ItemCreate, self).get_context_data()
-        context['todo_list'] = self.object.todo_list
-        context['title'] = 'Edit Item'
+        context = super().get_context_data()
+        todo_list = ToDoList.objects.get(id = self.kwargs["list_id"]) 
+        context['todo_list'] = todo_list
+        context['title'] = 'Adding new Item'
         return context
     def get_success_url(self):
         """
         Determine the URL redirect when the form is successully validated 
         """
-        return reverse('items', args=[self.object.todo_list_id])
+        return reverse("list", args=[self.object.todo_list_id])
 
 class ItemUpdate(UpdateView):
     model = TodoItem
@@ -84,4 +85,4 @@ class ItemUpdate(UpdateView):
         context['todo_list'] = self.object.todo_list
         return context
     def get_success_url(self):
-        return reverse('items', args=[self.object.todo_list_id])
+        return reverse("list", args=[self.object.todo_list_id])
