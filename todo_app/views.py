@@ -74,7 +74,7 @@ class ItemUpdate(UpdateView):
         'title',
         'description',
         'todo_list', 
-        'due_date'
+        'due_date',
     ]
     def get_context_data(self):
         """
@@ -85,4 +85,4 @@ class ItemUpdate(UpdateView):
         context['todo_list'] = self.object.todo_list
         return context
     def get_success_url(self):
-        return reverse("list", args=[self.object.todo_list_id])
+        return reverse("todo:list", args=[self.object.todo_list_id])
