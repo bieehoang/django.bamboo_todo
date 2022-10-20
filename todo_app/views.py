@@ -66,7 +66,7 @@ class ItemCreate(CreateView):
         """
         Determine the URL redirect when the form is successully validated 
         """
-        return reverse("list", args=[self.object.todo_list_id])
+        return reverse("todo:list", args=[self.object.todo_list_id])
 
 class ItemUpdate(UpdateView):
     model = TodoItem
