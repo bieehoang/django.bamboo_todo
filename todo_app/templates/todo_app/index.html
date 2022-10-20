@@ -10,11 +10,16 @@
     <li>
         <div role="button" onclick=" location.href='{% url 'todo:items' todolist.id  %} '">
                 {{ todolist.title }}
-            </div>
-        </li>
+        </div>
+    </li>
         {% empty %}
             <h4>You have no list!</h4>
         {% endfor %}
-    </ul>
-
+</ul>
+<p>
+    <input 
+        value = 'Add a new list'
+        type = 'button'
+        onclick="location.href='{% url 'todo:list-add' %}'"
+</p>
 {% endblock %}

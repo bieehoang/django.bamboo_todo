@@ -42,7 +42,7 @@ class ItemCreate(CreateView):
         'title',
         'description',
         'due_date', 
-        'todo_list'
+        'todo_list',
     ]
     def get_initital(self):
         """
@@ -71,7 +71,7 @@ class ItemUpdate(UpdateView):
     model = TodoItem
     fields = [
         'title',
-        'description'
+        'description',
         'todo_list', 
         'due_date'
     ]
