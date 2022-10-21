@@ -4,7 +4,7 @@
 ## An project use for create plane, working, saving function to make easier for user
 > To see it you can copy the link I wrote here and paste in any browsers you are using.
 ## PREVIEW
-_Published at_ "#"
+_Published at_ "https://github.com/Qiese/django.bamboo_todo"
 >
 >**Position**: Developer, Designer, Tester..
 >
