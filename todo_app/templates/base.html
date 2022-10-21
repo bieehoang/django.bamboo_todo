@@ -5,17 +5,21 @@
     <!-- BASE TEMPLATE -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     {% load static %}
     <link rel="stylesheet" href="{% static 'todo_app/style.css' %}">
-    <title>Django Todo List</title>
+    <title>BAMBOO TODO</title>
 </head>
 
 <body>
     <div class="">
         <h1 onclick="location.href='{% url "todo:index" %}'">
-            Bamboo To-do Project
+            Bamboo.To-do
         </h1>
     </div>
     <div class="">
@@ -24,6 +28,13 @@
                 Represent other html file
             {% endcomment %}
         {% endblock %}
+    </div>
+    <div id="footer">
+         <div class="ending-footer">
+           <p class="end-heading">
+             Powered by <a href="https://github.com/Qiese" target="blank" style="text-decoration: none">bieehoang</a>
+           </p>
+         </div>
     </div>
 </body>
 
