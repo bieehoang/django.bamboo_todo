@@ -4,7 +4,7 @@
 ## An project use for create planed, working, saving function to make user experience easier for using.
 > To see it you can copy the link I wrote here and paste in any browsers you are using.
 ## PREVIEW
-_Published at_ "https://bamboo-todo.herokuapp.com"
+### Published at [here](https://bamboo-todo.herokuapp.com)
 >
 >**Position**: Developer, Designer, Tester..
 >
